@@ -1,0 +1,487 @@
+<!--It is good practice to put your style tag in the head element
+    here I won't follow this rule just for clarity-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS properties</title>
+    <style>
+        /*Normally, all of your styles are specified here!*/
+    </style>
+</head>
+<body>
+    <!---------->
+    <!--COLORS-->
+    <!---------->
+    <style>
+        .colors{
+            color: green; /*We can specify a color by name*/
+            color: #ff0000; /*We can specify a color by hex code*/
+            color: rgb(255, 0, 0); /*We can specify a color by rgb code*/
+            color: rgba(255, 0, 0, 0.5); /*We can specify a color by rgba code*/
+        }
+    </style>
+
+    <div class="colors">
+        About colors
+    </div>/*
+
+    <style>
+        .bg{
+            background: red;
+            background: rgb(255, 17, 50);
+            background: rgba(255, 0, 0, 0.5); /*We can specify a color by rgba code (last value determines the opacity of you background*/
+        }
+    </style>
+
+    <div class="bg">
+        Styling the background
+    </div>
+
+
+    <!----------->
+    <!--BORDERS-->
+    <!----------->
+
+    <style>
+        .border{
+            border: 1px solid black; /*We can specify a border by specifying the width, style and color*/
+            border: 3px dashed rgb(255, 0, 0);
+            border: 2px dotted #000000;
+        }
+    </style>
+
+    <div class="border">
+        Give me a border please
+    </div>
+
+
+    <!------------------------>
+    <!--MARGINS AND PADDINGS-->
+    <!------------------------>
+
+    <style>
+        .margin-padding{
+            border: 1px solid black;
+            margin: 20px; /*The margin of an element is the space between the element and other elements (i.e. how far do i want to be pushed away from other elements)*/
+            padding: 20px; /*The padding of an element is the space between the element and its content (i.e. how far do i want to be pushed away from my content)*/
+            
+            /*We can also specify the margin and padding of a specific side*/
+            margin-left: 10em;
+            margin-right: 5em;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+
+            /*We can also specify the margin and padding of multiple sides at once*/
+            margin: 1em 2em 3em 4em; /*top right bottom left*/
+            padding: 1em 2em 3em 4em; /*top right bottom left*/
+
+            /*We can also specify the margin and padding of multiple sides at once, but with the same value*/
+            margin: 1em 2em; /*top and bottom 1em, left and right 2em*/
+            padding: 1em 2em; /*top and bottom 1em, left and right 2em*/
+        }
+    </style>
+
+    <div class="margin-padding">
+        Margins and paddings
+    </div>
+
+
+    <!-------------->
+    <!--DIMENSIONS-->
+    <!-------------->
+
+    <style>
+        .no-content{
+            background: yellow;
+            width: 2em;
+            height: 5em;
+        }
+    </style>
+
+    <div class="no-content"></div>
+
+
+    <style>
+        .with-content{
+            /* Because the content exceeds the dimensions of the element, by default the text will overflow*/
+            background: green;
+            width: 5em;
+            height: 5em;
+            
+            /*We can specify how the content should behave when it exceeds the dimensions of the element*/
+            overflow: visible; /*The content will overflow*/
+            overflow: hidden; /*The content will be hidden*/
+            overflow: scroll; /*The content will be scrollable*/
+            overflow: auto; /*The content will be scrollable if it exceeds the dimensions of the element*/
+            
+            /*We can specify how the content should behave when it exceeds the dimensions of the element, but only on the x-axis or y-axis*/
+            overflow-y: scroll; /*The content will be scrollable on the y-axis if it exceeds the dimensions of the element*/
+            overflow-x: scroll; /*The content will be scrollable on the x-axis if it exceeds the dimensions of the element*/
+        }
+    </style>
+
+    <div class="with-content">
+        some content some content some content some content some content
+    </div>
+
+
+    <!---------------->
+    <!--THE BOXMODEL-->
+    <!---------------->
+
+    <!--As a reference, we just create a container (div) with a certain width and height-->
+    <style>
+        .box-model1{
+            background: hotpink;
+            width: 150px;
+            height: 75px;
+            margin-top: 10em;
+        }
+    </style>
+
+    <div class="box-model1">Information</div>
+
+    <!--We make the same container, with the same width and height, but add a border and some padding to it-->
+    
+    <style>
+        .box-model2{
+            /*Same information*/
+            background: hotpink;
+            width: 150px;
+            height: 75px;
+            margin-top: 2em;
+
+            /*But now we add a border and some padding*/
+            border: 5px solid black;
+            padding: 10px;
+        }
+    </style>
+
+    <div class="box-model2">Information</div>
+
+    <!--We can see that the width and height of the container are still the same, but the border and padding are added to the width and height of the container-->
+
+    <!--We can include the border and padding in the width and height of the container by using the box-sizing property-->
+
+    <style>
+        .box-model3{
+            /*Same information as the box-model2 div*/
+            background: hotpink;
+            width: 150px;
+            height: 75px;
+            margin-top: 2em;
+            border: 5px solid black;
+            padding: 10px;
+
+            /* But now we add the box-sizing property*/
+            box-sizing: border-box; /*This will include the border and padding in the width and height of the container (the default value is content-box, which does not include the border and padding in the width and height of the container)*/
+        }
+    </style>
+
+    <div class="box-model3">Information</div>
+
+
+    <!----------->
+    <!--OUTLINE-->
+    <!----------->
+
+    <!--We already talked about borders, but there is also something called an outline-->
+
+    <style>
+        .errorButton{
+            /*What we have already seen*/
+            background: firebrick;
+            border: 5px solid white;
+            padding: 10px;
+
+            /*But now we add an outline*/
+            outline: 5px solid firebrick; /*The outline is similar to the border, but it does not affect the width and height of the container*/
+        }
+    </style>
+
+    <div class="errorButton">Error</div>
+
+
+    <!--------->
+    <!--FONTS-->
+    <!--------->
+
+    <style>
+        .fonts{
+            margin-top: 5em;
+
+            /*We can specify the size of the font*/
+            font-size: 16px; /*The default font-size is 16px*/
+            font-size: 32px;
+            font-size: 2em; /*the unit "em" is a relative unit of measurement. It is based on the font size of the element in question. Specifically, 2em is equal to double the current font size of the element.*/
+        
+            /*We can specify the font-color*/
+            color: red;
+            color: #ff0000;
+            color: rgb(255, 0, 0);
+
+            /*We can specify the font-style*/
+            font-weight: bold; /*The default font-weight is normal (you also have lighter, normal, bold, bolder)*/
+            font-style: italic; /*The default font-style is normal*/
+
+            /*We can specify the font-family*/
+            font-family: Arial; /*The default font-family is Times New Roman*/
+            font-family: "Times New Roman"; /*If the font-family contains spaces, we need to put the font-family in quotation marks*/
+            font-family: "Times New Roman", Arial; /*If the first font-family is not available, the second font-family will be used*/
+            font-family: sans-serif; /*My favorite option*/
+
+            font-family: monospace; /*The font-family will be monospace (all characters will have the same width)*/
+
+            /*We can specify the font-variant*/
+            font-variant: small-caps; /*The font-variant will be small-caps (all characters will be uppercase, but the uppercase characters will be smaller than the lowercase characters)*/
+
+            /*We can specify the text-align*/
+            text-align: center; /*The default text-align is left (you also have right, center, justify)*/
+
+            /*We can specify the text-decoration*/
+            text-decoration: underline; /*The default text-decoration is none (you also have underline, overline, line-through, blink)*/
+            text-decoration: none; /*We can remove the underline from a link (not applicable now because we are imposing these styles on the contents of a div)*/
+
+            /*We can specify the word- and letter-spacing*/
+            word-spacing: 10px; /*The default word-spacing is normal*/
+            letter-spacing: 10px; /*The default letter-spacing is normal*/
+        }
+
+    </style>
+
+    <div class="fonts">
+        Add some font-styles...
+    </div>
+
+    <!----------->
+    <!--ANCHORS-->
+    <!----------->
+
+    <style>
+        a.hyperlink:link{
+            /*We can specify the color of the hyperlink*/
+            color: blue;
+            color: #0000ff;
+            color: rgb(0, 0, 255);
+
+            /*We can specify the text-decoration of the hyperlink*/
+            text-decoration: none; /*The default text-decoration is underline (you also have underline, overline, line-through, blink)*/
+
+            /*We can specify the cursor of the hyperlink*/
+            cursor: pointer; /*The default cursor is auto (you also have pointer, wait, help, crosshair, text, move, not-allowed, ...)*/
+        }
+
+        a.hyperlink:visited{
+            /*We can specify the color of the hyperlink when we have visited it*/
+            color: purple;
+        }
+
+        a.hyperlink:hover{
+            /*We can specify the color of the hyperlink when we hover over it*/
+            color: red;
+            
+            /*We can specify the text-decoration of the hyperlink when we hover over it*/
+            text-decoration: underline; /*The default text-decoration is underline (you also have underline, overline, line-through, blink)*/
+        }
+
+        a.hyperlink:active{
+            /*We can specify the color of the hyperlink when we click on it*/
+            color: green;
+        }
+
+        /*NOTE: The order of the pseudo-classes is important!*/
+        /*NOTE2: The pseudo-classes are only applicable to hyperlinks, except for the :hover pseudo-class, which is applicable to all elements*/
+    </style>
+
+    <a href="https://google.com" class="hyperlink">Google</a>
+
+
+    <!-------------------------------->
+    <!--COMBINING MULTIPLE SELECTORS-->
+    <!-------------------------------->
+
+    <style>
+        /*We can combine multiple selectors too only target elements within elements within...*/
+        .some-container a{
+            background: green;
+        }
+    </style>
+
+    <div class="some-container">
+        <a href="https://GitHub.com" class="anchor">GitHub</a>
+        <p>Some  random text</p>
+    </div>
+
+
+    <!----------------->
+    <!--STYLING LISTS-->
+    <!----------------->
+
+    <!--Unordered lists-->
+
+    <style>
+        ul{
+            /*We can specify the list-style-type*/
+            list-style-type: none; /*none means that there will be no list-style-type*/
+            list-style-type: disc; /*The default list-style-type is disc (you also have circle, square, ...)*/
+            list-style-type: square; 
+        }
+    </style>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+
+    <!--Ordered lists-->
+    <style>
+        ol{
+            /*We can specify the list-style-type*/
+            list-style-type: none; /*none means that there will be no list-style-type*/
+            list-style-type: upper-roman; /* The default list-style-type is decimal (you also have decimal, lower-roman, upper-roman, lower-alpha, upper-alpha, ...)*/
+        }
+    </style>
+
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ol>
+
+    <!---------->
+    <!--TABLES-->
+    <!---------->
+    
+    <style>
+        /* We can put a border around the table and the cells*/
+        /*table, */table td, table th{
+            border: solid black 1px;
+        }
+
+        /* If we only specify borders of the cells, we will get a double border between the cells*/
+        /* We can fix this by specifying the border-collapse property*/
+
+        table{
+            border-collapse: collapse;
+        }
+
+        /* To give the contents within the cells a little bit more breathing room, we can specify the padding of the cells*/
+        table td, table th{
+            padding: 10px;
+        }
+    
+    </style>
+
+    <table>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+        <tr>
+            <td>Cell 1</td>
+            <td>Cell 2</td>
+        </tr>
+        <tr>
+            <td>Cell 3</td>
+            <td>Cell 4</td>
+        </tr>
+        <tr>
+            <td>Cell 5</td>
+            <td>Cell 6</td>
+        </tr>
+    </table>
+
+
+    <!-------------------------->
+    <!--VISIBILITY AND DISPLAY-->
+    <!-------------------------->
+
+    <!--Display-->
+
+    <style>
+        /*We can specify the display of an element*/
+        .display{
+            display: block; /*The default display is block (you also have inline, inline-block, none)*/
+            background: yellow;
+
+            /*A block element can have a width and height*/
+            height: 4em;
+            width: 4em;
+        }
+
+        .inline{
+            display: inline;
+            background: pink;
+
+            /*An inline element cannot have a width and height*/
+            height: 4em;
+            width: 4em;
+
+            /* But you can specify padding and margin*/
+            padding: 1em;
+            margin: 1em;
+        }
+
+        .inline-block{
+            display: inline-block;
+            background: green;
+
+            /*An inline-block element can have a width and height*/
+            height: 4em;
+            width: 4em;
+        }
+
+        .none{
+            display: none; /*The element will not be displayed*/
+            background: red;
+        }
+
+        /*NOTE: The difference between inline and inline-block is that inline-block elements can have a width and height, while inline elements cannot*/
+    </style>
+
+    This div behaves like a
+    <div class="display">Block</div>
+    element
+
+    This div behaves like an
+    <div class="inline">Inline</div>
+    element
+
+    This div behaves like an
+    <div class="inline-block">Inline-block</div>
+    element
+    
+    This div behaves like
+    <div class="none">None</div>
+    element
+
+
+    <!--Visibility-->
+
+    <style>
+        .visible{
+            visibility: visible; /*The default visibility is visible (you also have hidden, collapse)*/
+        }
+
+        .hidden{
+            visibility: hidden; /*The element will be hidden, but it will still take up space (try to take a look with display: inline)*/
+        }
+    </style>
+
+    This element is
+    <div class="visible">Visible</div>
+
+    This element is
+    <div class="hidden">Hidden</div>
+    Where did it go?
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oefenen css</title>
+    <style>
+        body{
+        background-color: yellow; }
+        div {
+            color: firebrick;
+        }
+        table {
+
+        border-collapse: collapse;
+        }
+
+        tr:nth-child( even ) {
+
+        background: #eee;
+        }
+
+        tr:hover {
+
+        background: #ddd;
+        }
+
+        td, th {
+        padding: 15px;
+        border-left: groove 1px #aaa;
+        }
+        td:first-child, th:first-child {
+        border: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        Hello world
+    </div>
+    <table>
+        <tr>
+           <th>Name</th>
+           <th>lastname</th>
+           <th>age</th>
+        </tr>
+        <tr>
+           <td>Marie</td>
+           <td>Hannaert</td>
+           <td>24</td>
+        </tr>
+        <tr>
+           <td>Emma</td>
+           <td>H</td>
+           <td>18</td>
+        </tr>
+        <tr>
+            <th colspan="2">Total</th>
+            <th>42</th>
+        </tr>
+     </table>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+
+    <style>
+        /* Targeting Multiple Elements */
+        /* We can apply styles to all <div> elements at once */
+        div {
+            background: green;
+        }
+
+        /* Targeting by ID */
+        /* We can style a specific <div> element with the id "div-two" */
+        #div-two {
+            background: red;
+        }
+
+        /* Targeting by Class */
+        /* Styling elements with the class "div-with-class" */
+        .div-with-class {
+            background: blue;
+        }
+
+        /* Targeting Elements with a Common Class */
+        /* Elements with class "hotpink-text" will have hotpink text color */
+        .hotpink-text {
+            color: hotpink;
+        }
+
+        /* Targeting Specific Elements with a Class */
+        /* Only <p> elements with the class "hotpink-text" will have lime background */
+        p.hotpink-text {
+            background: lime;
+        }
+        
+        /* Targeting Multiple Elements with Different Criteria */
+        /* Applying styles to both <p> elements (only one in this example) 
+           and elements with the class "div-with-class" */
+        .div-with-class, p {
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- Examples of CSS Selectors -->
+
+    <!-- Targeting All <div> Elements -->
+    <div>
+        Some random div
+    </div>
+    
+    <!-- Targeting by ID -->
+    <div id="div-two">
+        Some random div
+    </div>
+
+    <!-- Targeting by Class -->
+    <div class="div-with-class">
+        Some random div
+    </div>
+
+    <!-- Targeting by Class (Another Element) -->
+    <div class="div-with-class">
+        Some random div
+    </div>
+
+    <!-- Class with Overridden Style -->
+    <div class="hotpink-text">
+        This element has the class "hotpink," and its text is hotpink.
+    </div>
+
+    <!-- Targeting Specific Elements with a Class -->
+    <p class="hotpink-text">
+        This <p> element has hotpink text because it has the class "hotpink-text". 
+        Additionally, it is also given a lime background.
+    </p>
+
+</body>
+</html>

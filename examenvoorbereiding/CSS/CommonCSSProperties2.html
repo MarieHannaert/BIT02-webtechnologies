@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS properties 2</title>
+</head>
+<body>
+   <!---------------> 
+   <!--POSITIONING-->
+   <!--------------->
+
+
+    <!--The position property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky)-->
+    <!--You can change the position of relatively or absolute positioned element by setting the top, right, bottom, and left properties-->
+
+    <!--Static positioning-->
+
+    <style>
+        .static{
+            width: 100px;
+            height: 100px;
+            background: black;
+            position: static; /* The element is positioned according to the normal flow of the document */
+        }
+    </style>
+
+    <div class="static"></div>
+
+    <!--Relative positioning-->
+    
+    <style>
+        .move{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative; /* The element is positioned relative to its normal position */
+            left: 100px; /* Position the element 100px from the left of its normal position */
+            top: 100px; /* Position the element 100px from the top of its normal position */
+        }
+    </style>
+
+    <div class="move"></div>
+
+    <!--Absolute positioning in the viewport-->
+
+    <style>
+        .abs{
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: absolute; /* The element is positioned relative to its first positioned (not static) ancestor element (in this case)*/
+            right: 10px; /* Position the element 100px from the left of its first positioned ancestor element */
+            top: 10px; /* Position the element 100px from the top of its first positioned ancestor element */
+        }
+    </style>
+
+    <div class="abs"></div>
+
+    <!--Absolute positioning within a parent element-->
+
+    <style>
+        .parent{
+            margin-top: 50em;
+            width: 500px;
+            height: 500px;
+            background: yellow;
+
+            /*We need to set the position of the parent element to relative, otherwise the child element will be positioned relative to the viewport*/
+            position: relative;
+        }
+
+        .child{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute; /* The element is positioned relative to its first positioned (not static) ancestor element (in this case the parent div)*/
+            right: 10px; /* Position the element 100px from the left of its first positioned ancestor element */
+            top: 10px; /* Position the element 100px from the top of its first positioned ancestor element */
+        }
+    </style>
+
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+
+    <!--Fixed positioning-->
+    <style>
+        .fixed{
+            width: 100px;
+            height: 100px;
+            background: purple;
+            position: fixed; /* The element is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled */
+            right: 10px; /* Position the element 100px from the left of the viewport */
+            top: 10px; /* Position the element 100px from the top of the viewport */
+        }
+    </style>
+
+    <div class="fixed"></div>
+
+</body>
+</html>

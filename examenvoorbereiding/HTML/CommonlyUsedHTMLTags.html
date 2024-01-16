@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Commonly used tags</title>
+</head>
+<body>
+
+    <!------------------>
+    <!--Block elements-->
+    <!------------------>
+    
+    <!--Headers-->
+    <h1>This is a header</h1>
+    <h2>This is a header</h2>
+    <h3>This is a header</h3>
+    <h4>This is a header</h4>
+    <h5>This is a header</h5>
+    <h6>This is a header</h6>
+
+    <!--Problem unformatted text (All whitespace, including spaces, newlines and tabs, are reduced to 1 single space)-->
+    This is a first line of text. 
+    This is a second line of text.
+    This is a line with a lot of         spaces.
+    This is a line with a lot           of tabs.
+
+    <!--Linebreak-->
+    This is the first line of text<br>
+    This is the second line of text
+
+    <!--Paragraphs and preformatted text-->
+    <p>This is the first paragraph</p>
+    <p>This is the second paragraph.</p>
+
+    <p>This is a paragraph with a lot of             spaces</p>
+    <pre>This is a preformatted paragraph with a lot of           spaces</pre>
+
+    <!--Container without semantic meaning (will be used a lot in CSS)-->
+    <div>
+        This is some text within a div.
+    </div>
+    <div>
+        This is some text within a div.
+    </div>
+
+    <!--Quotes (semantic meaning: text from another source)-->
+    <blockquote>This is a blockquote</blockquote>
+
+    <!--Horizontal line-->
+    <hr>
+
+
+
+    <!------------------->
+    <!--Inline elements-->
+    <!------------------->
+
+    <!--Note beforehand: I will be adding a <br> tag after every line, because here we will discuss inline elements (i.e. elements that allow other elements to be on the same line).-->
+    <!--If we do not add <br> tags after every line, all of the lines in this document will be displayed on the same line in the browser.-->
+
+    <!--Bold text-->
+    This is <strong>bold text</strong><br>
+    This is <b>bold text</b><br>
+
+    <!--Emphasized text (itallic)-->
+    This is <i>emphasized text</i><br>
+    This is <em>emphasized text</em><br>
+
+    <!--Monospaced text (monospace = all characters take up the same space)-->
+    This is <code>formatted source code</code><br>
+
+    <!--Small text-->
+    This is <small>small text</small><br>
+    
+    <!--Striked text-->
+    This is <strike>wrong text</strike><br>
+    
+    <!--Quoted text-->
+    This is <q>quoted text</q><br>
+
+    <!--Inline container without semantic meaning (will be used a lot in CSS)-->
+    <span>This is the same as a div but inline</span><br>
+
+    <!--Mixing tags is possible (here a combination of inline elements is shown, but combining inline elements and block elements is also possible)-->
+    <small><em><strong>This small AND bold AND emphasized text</strong></em></small><br>
+
+    
+    <!--Images-->
+    <!---------->
+
+    <!--Add images from an online source-->
+    <img src="https://images.panda.org/assets/images/pages/welcome/orangutan_1600x1000_279157.jpg"><br>
+
+    <!--If you want to change the size of the image, you can use the width, height or both attributes-->
+    <img src="https://images.panda.org/assets/images/pages/welcome/orangutan_1600x1000_279157.jpg" width="200px">    <!--You can specify pixels--><br>
+    <img src="https://images.panda.org/assets/images/pages/welcome/orangutan_1600x1000_279157.jpg" width=50%>        <!--You can specify percentage of the screen--><br>
+    <img src="https://images.panda.org/assets/images/pages/welcome/orangutan_1600x1000_279157.jpg" width="20em">     <!--You can specify characters (1em = 1 character)--><br>
+    <img src="https://images.panda.org/assets/images/pages/welcome/orangutan_1600x1000_279157.jpg" width="400px" height="100px"> <!--Specifying both width and height will cause the loss of aspect ratio (i.e. the image will become squished)--><br>
+
+    <!--If the image cannot be found, it is possible to display an alternative text using the alt attribute (I removed the .jpg extension in the url to simulate this)-->
+    <img src="https://images.panda.org/assets/images/pages/welcome/orangutan_1600x1000_279157" alt="Image of an orangutan"><br>
+
+    <!--If you add an image to the folder where this script is stored, you can also specify the name of this image (later on, when you learn more in Linux, you can try to specify paths to an image as well)-->
+    <img src="Image_in_folder.png" alt="Image within the same folder as this script"><br>
+
+
+    <!--Anchors (hyperlinks)-->
+    <!------------------------>
+
+    <!--Normal hyperlinks-->
+    <a href="https://github.com/">GitHub</a><br>
+    <a href="https://howest.be">Howest</a><br>
+
+    <!--Hyperlinks to automatically send emails-->
+    <a href="mailto:mathias.verbeke@howest.be">Send an mail to Mathias Verbeke</a><br>
+
+    <!--Telephone and sms links-->
+    <a href="tel:+1234567890">Call Us</a><br>
+    <a href="sms:+1234567890">Send SMS</a><br>
+
+    <!--Anchor links-->
+    <div id="section2">This is Section 2</div> <!--You can give (almost) any tag an id--><br>
+    <a href="#section2">Go to Section 2</a> <!--We can specify this id within an anchor, preceded with a '#'.--><br>
+                                            <!--If the hyperlink is clicked, the browser will scroll the page to bring that section or element into view.--><br>
+
+
+
+    <!------------------------------------------->
+    <!--Elements that cannot exist on their own-->
+    <!------------------------------------------->
+    
+    <!--The fieldset tag and it's accompanying legend tag-->
+    <fieldset>                                                 <!--The fieldset tag creates a box-->
+        <legend>This is the fieldset legend</legend>           <!--The legend tag adds a legend to this box-->
+        this is the fieldset body
+    </fieldset>
+
+    <!--Lists-->
+    <!--------->
+
+    <!--Unordered lists (bullet points)-->
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+
+    <!--Ordered lists (Numbered list)-->
+    <ol>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ol>
+
+
+    <!--Tables-->
+    <!---------->
+
+    <!--Table with a header row (1st row)-->
+
+    <table>             
+        <tr>                        <!--Row 1-->
+            <th>Name</th>               <!--Headers-->
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr>                        <!--Row 2-->
+            <td>Mathias</td>            <!--Table data-->
+            <td>23</td>
+            <td>Bredene</td>
+        </tr>
+        <tr>                        <!--Row 3-->
+            <td>Paco</td>               <!--Table data-->
+            <td>??</td>
+            <td>Ostend</td>
+        </tr>
+    </table>
+
+    <!--Table with a header column (1st column)-->
+
+    <table>             
+        <tr>                        <!--Row 1-->
+            <th>Name</th>               <!--Headers-->
+            <td>Mathias</td>
+            <td>Paco</td>
+        </tr>
+        <tr>                        <!--Row 2-->
+            <th>Age</th>            <!--Table data-->
+            <td>23</td>
+            <td>??</td>
+        </tr>
+        <tr>                        <!--Row 3-->
+            <th>City</th>               <!--Table data-->
+            <td>Bredene</td>
+            <td>Ostend</td>
+        </tr>
+    </table>
+</body>
+</html>

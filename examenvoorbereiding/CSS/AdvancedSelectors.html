@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced selectors</title>
+
+    <style>
+        /*********************************/
+        /* Selectors that we already saw */
+        /*********************************/
+
+        /* See CSSSelectors.html */
+
+
+        /***************************/
+        /* More advanced selectors */
+        /***************************/
+
+        /* A. Selecting element within element */
+        /***************************************/
+
+        /* In this example we are selecting all <a> elements that are inside a <div> element, even if they are not direct children of the <div> element. */
+        div.firstexample a {
+            background: red;
+        }
+
+        /* Here, we are only selecting the anchor elements within the <ul> element. */
+
+        div.firstexample ul a { /* We could also type div.within ul li a */
+            color: white;
+        }
+
+
+        /* B. Selecting element within element example 2 */
+        /*************************************************/
+
+        /* Specifying div div means that we are selecting all <div> elements that are inside another <div> element. */
+        /* The child div is inside the parent div, so it will be colored green. */
+        /* The grandchild div is inside the child div, so it will also be colored green. */
+        div.secondexample div {
+            background: green;
+        }
+
+        /* To color only the grandchild div, we could add a third div level (because the grandchild div is the only div inside a div that is inside another div). */
+        div.secondexample div div {
+            background: hotpink;
+        }
+
+
+        /* C. Selecting element within element example 3 */
+        /*************************************************/
+
+        /* A problem that we encounter when specifying an element within an element, css will select all elements that are inside the specified element, even if they are not direct children of the specified element. */
+        /* In this example, we are coloring all <a> elements that are inside a <div> element */
+        
+        div.thirdexample a {
+            background: yellow;
+        }
+
+        /* Not only the <a> elements that are direct children of the <div> element are colored yellow, but also the <a> elements that are inside the <ul> element. */
+
+        /* To select only the <a> elements that are direct children of the <div> element, we can use the > selector (i.e. There should not be any other elements between the div and the a) */
+        div.thirdexample > a {
+            background: orange;
+        }
+
+
+        /* D. Selecting element within element example 4 */
+        /*************************************************/
+
+        /* With the + selector, we can select the element that is directly after the specified element. */
+        /* In this example, we are selecting selecting all the divs that are directly after another div (i.e. the direct sibling of another div). */
+        div.fourthexample div + div {
+            background: purple;
+        }
+
+        /* Note that again, one of the grandchild divs is also selected, because it is directly after another div. */
+
+
+        /* E. Selecting element within element example 5 */
+        /*************************************************/
+
+        /* With the ~ selector, we can select all the elements that are after the specified element, even if they are not direct siblings of the specified element. */
+        /* In this example, we are selecting all the divs that are after another div (i.e. the sibling of another div). */
+        div.fifthexample div ~ div {
+            background: brown;
+        }
+
+
+        /* F. Selecting element within element example 6 */
+        /*************************************************/
+
+        /* With the last-child selector, we can select the last child of the specified element. */
+
+        /* In this example, we are selecting the last child of the <div> element. */
+
+        div.sixthexample div:last-child {
+            background: black;
+            color: white;
+        }
+
+        /* Note that the last child element, but also the last grandchild div element is selected. */
+        /* To select only the last child element, we could write div.sexthexample > div:last-child */
+        /* To select only the last grandchild element, we could write div.sixthexample i div:last-child */
+
+
+        /* G. Selecting element within element example 7 */
+        /*************************************************/
+
+        /* With the first-child selector, we can select the first child of the specified element. */
+
+        /* In this example, we are selecting the first child of the <div> element. */
+
+        div.seventhexample div:first-child {
+            background: black;
+            color: white;
+        }
+
+        /* Note that the first child element, but also the first grandchild div element is selected. */
+
+
+        /* H. Selecting element within element example 8 */
+        /*************************************************/
+
+        /* With the nth-child selector, we can select the nth child of the specified element. */
+
+        /* In this example, we are selecting the 2nd child of the <div> element. */
+
+        div.eighthexample div:nth-child(2) {
+            background: hotpink;
+            color: lime;
+        }
+
+        /* Note that the 2nd child element, but also the 2nd grandchild div element is selected. */
+
+
+        /* I. Selecting element within element example 9 */
+        /*************************************************/
+
+        /* With the nth-child selector, we can select even or odd children of the specified element. */
+
+        /* In this example, we are selecting the odd children of the <div> element. */
+
+        div.ninthexample div:nth-child(2n + 1) {
+            border: solid 1px black;
+            color: grey;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- A. Selecting element within element -->
+    <!----------------------------------------->
+
+    <div class='firstexample'>
+        <p>Below is a list of links.</p>
+        <ul>
+            <li><a href="">Google.com</a></li>
+            <li><a href="">GitHub.com</a></li>
+            <li><a href="">Facebook.com</a></li>
+        </ul>
+
+        For more information, visit <a href="">Some random website</a>.
+    </div>
+
+    <br><br>
+
+
+    <!-- B. Selecting element within element example 2 -->
+    <!--------------------------------------------------->
+
+    <div class="secondexample">
+        Parent
+        <div>
+            Child
+        </div>
+        <div>
+            Child
+            <div>Grandchild</div>
+        </div>
+    </div>
+
+
+    <br><br>
+
+    <!-- C. Selecting element within element example 3 -->
+    <!--------------------------------------------------->
+
+    <div class="thirdexample">
+        <a href="">Random Link</a><br>
+        <a href="">Random Link 2</a>
+        <p>You might be interested in the following random links:</p>
+        <ul>
+            <li><a href="">Random Link 3</a></li>
+            <li><a href="">Random Link 4</a></li>
+            <li><a href="">Random Link 5</a></li>
+        </ul>
+    </div>
+
+
+    <br><br>
+
+    <!-- D. Selecting element within element example 4 -->
+    <!--------------------------------------------------->
+
+    <div class="fourthexample">
+        Parent
+        <div>Child 1</div>
+        <div>Child 2</div>
+        <div>Child 3</div>
+        <i>Child 4
+            <div>Grandchild 1</div>
+            <div>Grandchild 2</div>
+        </i>
+        <div>Child 5</div>
+        <div>Child 6</div>
+    </div>
+
+
+    <br><br>
+
+    <!-- E. Selecting element within element example 5 -->
+    <!--------------------------------------------------->
+
+    <div class="fifthexample">
+        Parent
+        <div>Child 1</div>
+        <div>Child 2</div>
+        <div>Child 3</div>
+        <i>Child 4
+            <div>Grandchild 1</div>
+            <div>Grandchild 2</div>
+        </i>
+        <div>Child 5</div>
+        <div>Child 6</div>
+    </div>
+
+
+    <br><br>
+
+    <!-- F. Selecting element within element example 6 -->
+    <!--------------------------------------------------->
+
+    <div class="sixthexample">
+        Parent
+        <div>Child 1</div>
+        <div>Child 2</div>
+        <div>Child 3</div>
+        <i>Child 4
+            <div>Grandchild 1</div>
+            <div>Grandchild 2</div>
+        </i>
+        <div>Child 5</div>
+        <div>Child 6</div>
+    </div>
+
+
+    <br><br>
+
+    <!-- G. Selecting element within element example 7 -->
+    <!--------------------------------------------------->
+
+    <div class="seventhexample">
+        Parent
+        <div>Child 1</div>
+        <div>Child 2</div>
+        <div>Child 3</div>
+        <i>Child 4
+            <div>Grandchild 1</div>
+            <div>Grandchild 2</div>
+        </i>
+        <div>Child 5</div>
+        <div>Child 6</div>
+    </div>
+
+
+    <br><br>
+
+    <!-- H. Selecting element within element example 8 -->
+    <!--------------------------------------------------->
+
+    <div class="eighthexample">
+        Parent
+        <div>Child 1</div>
+        <div>Child 2</div>
+        <div>Child 3</div>
+        <i>Child 4
+            <div>Grandchild 1</div>
+            <div>Grandchild 2</div>
+        </i>
+        <div>Child 5</div>
+        <div>Child 6</div>
+    </div>
+
+
+    <br><br>
+
+
+    <!-- I. Selecting element within element example 9 -->
+    <!--------------------------------------------------->
+
+    <div class="ninthexample">
+        Parent
+        <div>Child 1</div>
+        <div>Child 2</div>
+        <div>Child 3</div>
+        <i>Child 4
+            <div>Grandchild 1</div>
+            <div>Grandchild 2</div>
+        </i>
+        <div>Child 5</div>
+        <div>Child 6</div>
+    </div>
+
+        
+
+</body>
+</html>

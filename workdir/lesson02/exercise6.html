@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>vertical barplot</title>
+
+   <style>
+      .axis{
+         width: 500px;
+
+         border-left: solid 3px black;
+         border-bottom: solid 3px black;
+
+         position: relative;
+         margin-left: 5em;
+
+      }
+      .full{
+         width: 15%;
+         height: 500px;
+         background: white;
+         margin: 0.5em;
+         border: solid black 1px;
+
+         display: inline-block;
+
+         position: relative;
+      }
+
+      .percentage{
+         background: lightskyblue;
+        
+         width: 100%;
+         text-align: right;
+
+         border: solid 1px black;
+
+         box-sizing: border-box;
+         position: absolute;
+         bottom: 0em;
+      }
+      .X{
+         position: absolute;
+         bottom: -2em;
+         left: 50%;
+
+      }
+      .Y{
+         position: absolute;
+         left: -2em;
+         top: 50%;
+      }
+   </style>
+
+</head>
+<body>
+   <div class="axis"> 
+
+      <div class="full">
+         <div class="percentage" style="height: 75%;">75%</div>
+      </div>
+      <div class="full"> 
+         <div class="percentage" style="height: 25%;">25%</div>
+      </div>
+      <div class="full"> 
+         <div class="percentage" style="height: 50%">50%</div>
+      </div>
+      <div class="full"> 
+         <div class="percentage" style="height: 100%;">100%</div>
+      </div>
+      <div class="X">X</div>
+      <div class="Y">Y</div>
+   </div>
+</body>
+</html>

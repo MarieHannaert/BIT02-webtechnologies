@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common CSS properties 3</title>
+
+    <style>
+        img{
+            width: 300px;
+            
+            /* Float means to move the element to the left or right of its container, allowing text and inline elements to wrap around it. */
+            float: none; /* The default value is none. */
+            float: left; /* You can also use float: right; */
+
+            /* We can add some margin to the image to make it look better. */
+            margin-right: 1em;
+        }
+
+        /*It is possible that we don't want certain elements to wrap around the floated element. We can use the clear property to prevent this. */
+        p.clear{
+            /* The clear property specifies on which sides of an element floating elements are not allowed to float. */
+            clear: both; /* Here we are saying that we don't want any floating elements on either side of this paragraph. */
+            clear: left; /* Here we are saying that we don't want any floating elements on the left side of this paragraph. */
+            clear: right; /* Here we are saying that we don't want any floating elements on the right side of this paragraph. */
+            clear: none; /* Here we are saying that we allow floating elements on both sides of this paragraph. This is the default value. */
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" alt="CSS image">
+
+    <p>Flibberflop jibberjabber wobblewobble ziggityzaggity quibblyquabbly doodledaddle razzledazzle pifflepaffle whatchamacallit thingamajiggy dingleberry wobblegobble hocuspocus supercalifragilisticexpialidocious. Blibberblabber snickerdoodle wobbleflop fiddlefaddle noodleoodle dinglehopper dinglehoofer dinglehoffer gibberish mishmash wishywashy mishmosh wobblybobbly dinglehopper schmoodle. Splishsplash bibbitybobbity boogiewoogie dillydally noodleoodle dinglehopper flibberflabber wishywashy wobblegobble doodledaddle pifflepaffle dinglehoofer dingleberry.</p>
+    
+    <p class="clear">Zwibble flibberwitz jibberjabber doodlewop, zippity zappity zoopity zorp, blibberblabber fiddledeedee, wobblewobble wigglywoo! Flippity floppity floopity floop, bippity boppity boopity bop, snicker-snack, tickety-tock, higgledy-piggledy ploppity plop. Shizzlewizzle snazzlewazzle, razzmatazzle jibber-jabber, ziggity-zaggity zigzagzoom, mumble-jumble fiddle-faddle, splishity-splashity splippity-slop. Wobble-dobble dingle-dangle, gibber-gabber flibber-flobber, hocus-pocus, mumbo-jumbo, wiggly-waggly whoop-de-doo!</p>
+</body>
+</html>

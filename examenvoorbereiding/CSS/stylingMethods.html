@@ -1,0 +1,62 @@
+<!--First take a look at method 1, then method 2 and then method 3-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>3 methods to apply styles</title>
+    
+    <!--------------------------->
+    <!--Method 2: The style tag-->
+    <!--------------------------->
+    <style>
+
+        /*We can target multiple elements at once*/
+        /*Here we target all <p> elements to give them blue text and a hotpink background*/
+        p{
+            color: blue;
+            background: hotpink;
+            font-weight: bold;
+        }
+
+    </style>
+    
+    
+    <!------------------------------------->
+    <!--Method 3: The external stylesheet-->
+    <!------------------------------------->
+    
+    <!--We can use an external css stylesheet to give elements within this HTML document a certain style-->
+    <link rel="stylesheet" href="stylesheet.css">
+
+
+</head>
+<body>
+
+    <!--------------------------------->
+    <!--Method 1: The style attribute-->
+    <!--------------------------------->
+    <div style="background:green;">We can give this div a green background using the style attribute</div>
+    <div style="color: red">We can give this div red text using the style attribute</div>
+    <div style="background:green; color: red;">We can give this div red text and a green background using the style attribute.</div>
+
+
+    <!--------------------------------------------------------------------->
+    <!--Method 2: The style tag within the head (refer to <head> <style>)-->
+    <!--------------------------------------------------------------------->
+    <p>Using the style tag...</p>
+    <p>... we can target multiple elements at once...</p>
+    <p>to give them the same style...</p>
+
+
+    <!------------------------------------->
+    <!--Method 3: The external stylesheet-->
+    <!------------------------------------->
+
+    <!--We can use an external css stylesheet to give elements within this HTML document a certain style-->
+    <span>Using an external stylesheet...</span>
+    <span>... we can also style elements.</span>
+    <span>This will come in handy once we make webtools spanning multiple pages...</span>
+    <span>Because we will only have to specify styles once!</span>
+
+</body>
+</html>

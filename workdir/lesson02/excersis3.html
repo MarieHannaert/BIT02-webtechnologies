@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Classmates Table Revisited</title>
+    <style>
+        
+      table {
+
+        border-collapse: collapse;
+        }
+
+        tr:nth-child(even){
+            background: lightgrey;
+        }
+        tr:hover {
+        background: grey;
+        }
+
+        td, th {
+        padding: 15px;
+        border-left: groove 1px black;
+        }
+        td:first-child, th:first-child {
+        border: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Classmates</caption>
+        <tr>
+            <th >first name</th>
+            <th >last name</th>
+            <th >age</th>
+        </tr>
+        <tr>
+            <td > Jhon</td>
+            <td >Doe</td>
+            <td >21</td>
+        </tr>
+        <tr>
+            <td >jaine</td>
+            <td >Doe</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td> jake </td>
+            <td> Doe</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>Lisa </td>
+            <td>Peters</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>kim</td>
+            <td>jansens</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            
+            <th colspan="2">Total</th>
+            <td>105</td>
+        </tr>
+    </table>   
+</body>
+</html>
