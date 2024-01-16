@@ -1,0 +1,83 @@
+div.navbar{
+    background: #3498db;
+    margin: 0em;
+    padding: 1em;
+    color: white;
+    font-family: sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    font-weight: bold; 
+    font-size: 150%;
+    
+
+
+}
+a.navbar{
+    color: white;
+    font-weight: normal;
+    font-size: 50%;
+    font-family: sans-serif;
+    text-decoration: none;
+    
+}
+a.navbar:hover{
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+}
+body{
+    background-color: #f9f9f9;
+    font-family: sans-serif;
+    margin: 0em;
+    padding: 0em;
+}
+div.content{
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    font-family: sans-serif;
+
+}
+a.requestbutton{
+    display: block;
+    color: white;
+    background: #3498db;
+    padding: 0.5em;
+    border-radius: 5px;
+    width: fit-content;
+    text-decoration: none;
+    margin: 1em auto;
+    position: relative;
+
+}
+input:hover{
+    background-color: #f9f9f9;
+}
+a.errorbutton{
+    display: block;
+    color: white;
+    background: #e74c3c;
+    padding: 0.5em;
+    border-radius: 5px;
+    width: fit-content;
+    text-decoration: none;
+    margin: 1em auto;
+    position: relative;
+    font-weight: bold;
+}
+div.seqviz{
+
+    font-family: monospace;
+    font-size: 120%;
+    border: solid 1px orange;
+    fill: auto;
+
+}
+h4{
+    font-weight: bold;
+}
+

@@ -1,0 +1,14 @@
+
+Explore the fascinating world of proteins with this Protein Visualization Tool.
+
+How to Use:
+Submit your protein sequences using the user-friendly interface. You can either upload a (multi)fasta file or paste the sequences directly. Customize your visualization preferences, such as coloring amino acid groups, to enhance the visualization.
+
+Features:
+* Upload (multi)fasta files or paste sequences for visualization.
+* Color-code amino acid groups for easy identification.
+* Group amino acids to enhance readability.
+* Remove or highlight invalid amino acids for accurate analysis.
+
+Get Started:
+Click on the "Submit Sequences" button to begin the protein visualization journey.
